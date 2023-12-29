@@ -51,6 +51,10 @@ To extract methods from the IntelliJ Community project:
 ```
 python data_extraction.py
 ```
+To extract data from a specific Java project directory, use the --dir option with the data_extraction.py script. For example, if you want to process files in a directory named "another-directory", run the command:
+```
+python data_extraction.py --dir another-directory
+```
 For data preprocessing:
 ```
 python data_preprocessing.py
