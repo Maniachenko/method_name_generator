@@ -119,9 +119,6 @@ def process_java_files(directory):
                                        "boolean_type", "floating_point_type", "generic_type", "scoped_type_identifier",
                                        "integral_type", "void_type", 'file_path'])
 
-    # remove index column
-    methods_df = methods_df.iloc[:, 1:]
-
     methods_df.to_csv('java_methods.csv')
 
 
@@ -131,4 +128,4 @@ if __name__ == "__main__":
     parser.add_argument('--dir', '-d', type=str, default='intellij-community',
                         help='Directory containing Java project files (default: intellij-community)')
     args = parser.parse_args()
-    process_java_files(args.directory)
+    process_java_files(args.dir)
