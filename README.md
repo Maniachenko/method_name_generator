@@ -20,6 +20,21 @@ git clone [repository-link]
 ```
 pip install -r requirements.txt
 ```
+3. **Clone Necessary Repositories and Install Additional Dependencies**:
+
+These commands clone additional repositories and install a specific SpaCy language model required for your project. Run these commands in the same environment where you installed the packages from requirements.txt.
+* Clone the tree-sitter-java repository:
+```
+git clone https://github.com/tree-sitter/tree-sitter-java.git
+```
+* Clone the intellij-community repository:
+```
+git clone https://github.com/JetBrains/intellij-community.git
+```
+* Install the en_core_web_md model for SpaCy:
+```
+python -m spacy download en_core_web_md
+```
 
 ### Running the Complete Process
 For a comprehensive, ready-to-run process, refer to the Jupyter notebook [method_name_generation.ipynb](https://github.com/Maniachenko/method_name_generator/blob/master/method_name_generation.ipynb) and .py analog [method_name_generation.py](https://github.com/Maniachenko/method_name_generator/blob/master/method_name_generation.py) included in the repository. Alternatively, the project can be executed through individual scripts as detailed above.
