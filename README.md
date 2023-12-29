@@ -1,7 +1,7 @@
 # Method Name Generation with CodeT5+: A Case Study on IntelliJ Community
 
 ## Overview
-This project explores enhancing code generation by predicting method names using **CodeT5+**, focusing on a large open-source project, [**IntelliJ Community**](https://github.com/JetBrains/intellij-community). The process starts with extracting all methods from the project, forming a comprehensive dataset. Initially, the project tests the unfinetuned [**CodeT5+**](https://huggingface.co/models?sort=downloads&search=codet5p) model on this data to assess its baseline performance in predicting method names. Subsequently, the model undergoes fine-tuning with the specific dataset, aimed at improving its accuracy in method name prediction tailored to the Java code in IntelliJ Community. A comparative analysis follows, evaluating the model's performance before and after fine-tuning, with an emphasis on quality improvements.
+This project explores enhancing code generation by predicting method names using [**CodeT5+**](https://huggingface.co/models?sort=downloads&search=codet5p), focusing on a large open-source project, [**IntelliJ Community**](https://github.com/JetBrains/intellij-community). The process starts with extracting all methods from the project, forming a comprehensive dataset. Initially, the project tests the unfinetuned CodeT5+ model on this data to assess its baseline performance in predicting method names. Subsequently, the model undergoes fine-tuning with the specific dataset, aimed at improving its accuracy in method name prediction tailored to the Java code in IntelliJ Community. A comparative analysis follows, evaluating the model's performance before and after fine-tuning, with an emphasis on quality improvements.
 
 ## Project Structure
 1. **Data Collection**: Extracting methods from IntelliJ Community.
@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ```
 
 ### Running the Complete Process
-For a comprehensive, ready-to-run process, refer to the Jupyter notebook (method_name_generation.ipynb) included in the repository. Alternatively, the project can be executed through individual scripts as detailed above.
+For a comprehensive, ready-to-run process, refer to the Jupyter notebook [method_name_generation.ipynb](https://github.com/Maniachenko/method_name_generator/blob/master/method_name_generation.ipynb) included in the repository. Alternatively, the project can be executed through individual scripts as detailed above.
 
  ## Usage
 To extract methods from the IntelliJ Community project:
