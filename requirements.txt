@@ -1,0 +1,13 @@
+requests
+numpy
+pandas
+datasets
+git
+nltk
+scikit-learn
+tqdm
+transformers
+tree_sitter
+evaluate
+python-Levenshtein
+rouge
