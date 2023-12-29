@@ -83,7 +83,7 @@ Your data should be in the following format:
 | 6  | kindsOf     | (boolean sources, boolean javadoc, String... artifactPackaging) | ['public', 'static']            | {<br>    EnumSet<ArtifactKind> result = EnumSet.noneOf(ArtifactKind.class);<br>    if (sources) {                                                                                                                                                                                                                                                                |                  |              |                     |                           |                        |               |           | (continues...)                                                                                                                 |
 
  
-**Model Training**:
+**Model Training** (the previous Data Preprocessing step should be implemented):
 * Run Model Training:
 ```
 python model_training.py
@@ -93,7 +93,7 @@ python model_training.py
 python script.py --model_dir your_model_directory --batch_size 20
 ```
 
-**Model Evaluation**
+**Model Evaluation** (the previous Data Preprocessing step should be implemented):
 * Run Model Evaluation:
 ```
 python model_evaluation.py
