@@ -39,7 +39,7 @@ python -m spacy download en_core_web_md
 
 The model required for the project is hosted on Google Drive due to size limitations on GitHub.
 
-* Access the model: Visit the provided [**Google Drive link**](https://drive.google.com/drive/folders/11q4dsYC9TvM5wrebtqW9HndFXas7mlZ4?usp=sharing).
+* Access the model: Visit the provided [Google Drive link](https://drive.google.com/drive/folders/11q4dsYC9TvM5wrebtqW9HndFXas7mlZ4?usp=sharing).
 * Download the model: Download the entire model directory.
 * Place the model in your repository: After downloading, move the model directory (/model) to your project's repository folder.
 
