@@ -3,6 +3,7 @@ import os
 import pandas as pd
 from tqdm import tqdm
 from tree_sitter import Language, Parser
+import argparse
 
 JAVA_EXTENSIONS = [".java"]
 ENCODINGS = ['utf-8', 'ISO-8859-1', 'windows-1252', 'utf-16']
@@ -118,9 +119,16 @@ def process_java_files(directory):
                                        "boolean_type", "floating_point_type", "generic_type", "scoped_type_identifier",
                                        "integral_type", "void_type", 'file_path'])
 
+    # remove index column
+    methods_df = methods_df.iloc[:, 1:]
+
     methods_df.to_csv('java_methods.csv')
 
 
 # Execute the script
 if __name__ == "__main__":
-    process_java_files('intellij-community')
+    parser = argparse.ArgumentParser(description='Process a directory of Java files.')
+    parser.add_argument('--dir', '-d', type=str, default='intellij-community',
+                        help='Directory containing Java project files (default: intellij-community)')
+    args = parser.parse_args()
+    process_java_files(args.directory)
