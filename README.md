@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ```
 
 ### Running the Complete Process
-For a comprehensive, ready-to-run process, refer to the Jupyter notebook [method_name_generation.ipynb](https://github.com/Maniachenko/method_name_generator/blob/master/method_name_generation.ipynb) included in the repository. Alternatively, the project can be executed through individual scripts as detailed above.
+For a comprehensive, ready-to-run process, refer to the Jupyter notebook [method_name_generation.ipynb](https://github.com/Maniachenko/method_name_generator/blob/master/method_name_generation.ipynb) and .py analog [method_name_generation.py](https://github.com/Maniachenko/method_name_generator/blob/master/method_name_generation.py) included in the repository. Alternatively, the project can be executed through individual scripts as detailed above.
 
  ## Usage
 To extract methods from the IntelliJ Community project:
