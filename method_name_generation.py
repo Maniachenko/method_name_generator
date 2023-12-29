@@ -8,7 +8,7 @@ Subsequently, the model undergoes fine-tuning with the specific dataset, aimed a
 
 The project concludes by summarizing the findings and providing insights into the effectiveness of method name prediction as a method for enhancing code generation, especially in large open-source projects. It showcases the practical application of CodeT5+ in software development and explores machine learning's potential in code generation.
 
-## Istallation And Imports
+## Installations And Imports
 """
 
 # Commented out IPython magic to ensure Python compatibility.
