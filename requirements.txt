@@ -2,7 +2,6 @@ requests
 numpy
 pandas
 datasets
-git
 nltk
 scikit-learn
 tqdm
