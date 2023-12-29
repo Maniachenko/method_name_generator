@@ -16,7 +16,7 @@ This project explores enhancing code generation by predicting method names using
 ```
 git clone [repository-link]
 ```
-2. **Install the required packages:**
+2. **Install the required packages**:
 ```
 pip install -r requirements.txt
 ```
@@ -35,6 +35,13 @@ git clone https://github.com/JetBrains/intellij-community.git
 ```
 python -m spacy download en_core_web_md
 ```
+4. **Download the Model**:
+
+The model required for the project is hosted on Google Drive due to size limitations on GitHub.
+
+* Access the model: Visit the provided [**Google Drive link**](https://drive.google.com/drive/folders/11q4dsYC9TvM5wrebtqW9HndFXas7mlZ4?usp=sharing).
+* Download the model: Download the entire model directory.
+* Place the model in your repository: After downloading, move the model directory (/model) to your project's repository folder.
 
 ### Running the Complete Process
 For a comprehensive, ready-to-run process, refer to the Jupyter notebook [method_name_generation.ipynb](https://github.com/Maniachenko/method_name_generator/blob/master/method_name_generation.ipynb) and .py analog [method_name_generation.py](https://github.com/Maniachenko/method_name_generator/blob/master/method_name_generation.py) included in the repository. Alternatively, the project can be executed through individual scripts as detailed above.
