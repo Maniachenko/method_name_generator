@@ -4,6 +4,7 @@ import spacy
 import Levenshtein
 from collections import Counter
 
+# Helper function to split camelCase into subwords
 def split_camel_case(name):
     # Regular expression to identify subwords in camelCase
     matches = re.finditer('.+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)', name)
