@@ -14,7 +14,7 @@ This project explores enhancing code generation by predicting method names using
 ## Setup and Installation
 1. **Clone the repository**:
 ```
-git clone [repository-link]
+git clone -b master https://github.com/Maniachenko/method_name_generator.git
 ```
 2. **Install the required packages:**
 ```
