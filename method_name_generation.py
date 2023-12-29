@@ -221,7 +221,7 @@ def parse_java_file(file_path):
 
 # Collecting all .java files from the IntelliJ Community repository
 java_files = []
-for dir_path, dir_names, file_names in os.walk('/content/intellij-community'):
+for dir_path, dir_names, file_names in os.walk('intellij-community'):
     # Adding paths of .java files to the list
     java_files.extend([os.path.join(dir_path, file_name) for file_name in file_names if file_name.endswith(".java")])
 
