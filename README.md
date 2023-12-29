@@ -47,22 +47,60 @@ The model required for the project is hosted on Google Drive due to size limitat
 For a comprehensive, ready-to-run process, refer to the Jupyter notebook [method_name_generation.ipynb](https://github.com/Maniachenko/method_name_generator/blob/master/method_name_generation.ipynb) and .py analog [method_name_generation.py](https://github.com/Maniachenko/method_name_generator/blob/master/method_name_generation.py) included in the repository. Alternatively, the project can be executed through individual scripts as detailed above.
 
  ## Usage
-To extract methods from the IntelliJ Community project:
+**Data Collection** 
+* Extract Methods from IntelliJ Community Project:
 ```
 python data_extraction.py
 ```
-To extract data from a specific Java project directory, use the --dir option with the data_extraction.py script. For example, if you want to process files in a directory named "another-directory", run the command:
+* For convenience for each file I have some specific arguments. To extract data from a specific Java project directory, use the --dir option with the data_extraction.py script. For example, if you want to process files in a directory named "another-directory", run the command:
 ```
 python data_extraction.py --dir another-directory
 ```
-For data preprocessing:
+**Data preprocessing**:
+* Default Preprocessing:
 ```
 python data_preprocessing.py
 ```
-To train and evaluate the model:
+* To specify a different file path:
+```
+python script.py --file path_to_your_file.csv
+```
+* Or using the short option:
+
+```
+python script.py -f path_to_your_file.csv
+```
+
+Your data should be in the following format:
+| id | identifier  | formal_parameters                                      | modifiers                       | block                                                                                                                                                                                                                                                                                                                                                             | type_identifier  | boolean_type | floating_point_type | generic_type               | scoped_type_identifier | integral_type | void_type | file_path                                                                                                                       |
+|----|-------------|--------------------------------------------------------|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|--------------|---------------------|-----------------------------|------------------------|---------------|-----------|--------------------------------------------------------------------------------------------------------------------------------|
+| 0  | getArtifact | ()                                                     | ['@NotNull', 'public']          | {<br>    return myArtifact;<br>}                                                                                                                                                                                                                                                                                                                                   | Artifact         |              |                     |                           |                        |               |           | intellij-community\aether-dependency-resolver\src\org\jetbrains\idea\maven\aether\ArtifactDependencyNode.java                |
+| 1  | getDependencies | ()                                                 | ['@NotNull', 'public']          | {<br>    return myDependencies;<br>}                                                                                                                                                                                                                                                                                                                              |                  |              |                     | List<ArtifactDependencyNode> |                        |               |           | intellij-community\aether-dependency-resolver\src\org\jetbrains\idea\maven\aether\ArtifactDependencyNode.java                |
+| 2  | isRejected  | ()                                                     | ['public']                      | {<br>    return myRejected;<br>}                                                                                                                                                                                                                                                                                                                                  |                  | boolean      |                     |                           |                        |               |           | intellij-community\aether-dependency-resolver\src\org\jetbrains\idea\maven\aether\ArtifactDependencyNode.java                |
+| 3  | getClassifier | ()                                                   | ['@NotNull', 'public']          | {<br>    return myClassifier;<br>}                                                                                                                                                                                                                                                                                                                                | String           |              |                     |                           |                        |               |           | intellij-community\aether-dependency-resolver\src\org\jetbrains\idea\maven\aether\ArtifactKind.java                          |
+| 4  | getExtension | ()                                                    | ['@NotNull', 'public']          | {<br>    return myExtension;<br>}                                                                                                                                                                                                                                                                                                                                 | String           |              |                     |                           |                        |               |           | intellij-community\aether-dependency-resolver\src\org\jetbrains\idea\maven\aether\ArtifactKind.java                          |
+| 5  | find        | (String classifier, String extension)                  | ['public', 'static']            | {<br>    for (ArtifactKind kind : ArtifactKind.values()) {<br>      if (kind.getClassifier().equals(classifier) && kind.getExtension().equals(extension)) {<br>        return kind;<br>      }<br>    }<br>    return null;<br>  }                                                                                                                                    | ArtifactKind     |              |                     |                           |                        |               |           | intellij-community\aether-dependency-resolver\src\org\jetbrains\idea\maven\aether\ArtifactKind.java                          |
+| 6  | kindsOf     | (boolean sources, boolean javadoc, String... artifactPackaging) | ['public', 'static']            | {<br>    EnumSet<ArtifactKind> result = EnumSet.noneOf(ArtifactKind.class);<br>    if (sources) {                                                                                                                                                                                                                                                                |                  |              |                     |                           |                        |               |           | (continues...)                                                                                                                 |
+
+ 
+**Model Training**:
+* Run Model Training:
 ```
 python model_training.py
+```
+* To specify a model directory and batch size:
+```
+python script.py --model_dir your_model_directory --batch_size 20
+```
+
+**Model Evaluation**
+* Run Model Evaluation:
+```
 python model_evaluation.py
+```
+* To specify a batch size:
+```
+python script_name.py --batch_size 8
 ```
 
 ## Methodology
