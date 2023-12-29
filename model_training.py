@@ -6,31 +6,34 @@ from transformers import (AutoModelForSeq2SeqLM, AutoTokenizer, DataCollatorForS
 from sklearn.model_selection import train_test_split
 import evaluate
 
-# Load the preprocessed dataset
-df = pd.read_csv('preprocessed_java_methods.csv')
+def open_df():
+    # Load the preprocessed dataset
+    df = pd.read_csv('preprocessed_java_methods.csv')
 
-# Extract labels and prepare the data
-labels = df['identifier']
-data = df.drop('identifier', axis=1)
+    # Extract labels and prepare the data
+    labels = df['identifier']
+    data = df.drop('identifier', axis=1)
 
-# Splitting the dataset
-train_data, temp_test_data, train_labels, temp_test_labels = train_test_split(data, labels, test_size=10000,
-                                                                              random_state=42)
-test_data, val_data, test_labels, val_labels = train_test_split(temp_test_data, temp_test_labels, test_size=5000,
-                                                                random_state=42)
+    # Splitting the dataset
+    train_data, temp_test_data, train_labels, temp_test_labels = train_test_split(data, labels, test_size=10000,
+                                                                                  random_state=42)
+    test_data, val_data, test_labels, val_labels = train_test_split(temp_test_data, temp_test_labels, test_size=5000,
+                                                                    random_state=42)
 
-# Creating Dataset objects
-train_dataset = Dataset.from_pandas(train_data.assign(labels=train_labels))
-test_dataset = Dataset.from_pandas(test_data.assign(labels=test_labels))
-val_dataset = Dataset.from_pandas(val_data.assign(labels=val_labels))
+    # Creating Dataset objects
+    train_dataset = Dataset.from_pandas(train_data.assign(labels=train_labels))
+    test_dataset = Dataset.from_pandas(test_data.assign(labels=test_labels))
+    val_dataset = Dataset.from_pandas(val_data.assign(labels=val_labels))
 
-# Creating a DatasetDict
-dataset_dict = DatasetDict({
-    'train': train_dataset,
-    'validation': val_dataset,
-    'test': test_dataset
-})
+    # Creating a DatasetDict
+    dataset_dict = DatasetDict({
+        'train': train_dataset,
+        'validation': val_dataset,
+        'test': test_dataset
+    })
+    return dataset_dict
 
+dataset_dict = open_df()
 # Tokenizer and model checkpoint
 checkpoint = "t5-base"  # Replace with your model checkpoint
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
